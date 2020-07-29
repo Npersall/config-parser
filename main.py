@@ -2,7 +2,7 @@ import sys
 
 if __name__ == "__main__":
     conf = open(f"{sys.argv[1]}", 'r')
-    data = conf.readlines()    
+    data = conf.readlines() 
     
     def clean_newlines(data):
         data_list = []
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     def convert_list(input):
         conv_d = {input[i] : input[i +1] for i in range(0, len(input),2)}
         return conv_d
-        
+
     try:
         replacement_pos = {'on','true', 'yes'}
         replacement_neg = {'off', 'no', 'false'}
@@ -36,7 +36,7 @@ if __name__ == "__main__":
                         no_whitespace = True
                     if no_whitespace in replacement_neg:
                         no_whitespace = False
-
+                        
                     list_corrected.append(no_whitespace)
                     
         ans=(convert_list(list_corrected))
@@ -45,8 +45,9 @@ if __name__ == "__main__":
         print(ans['user'])
         print(ans['debug_mode'])
 
+
     finally:
         conf.close()
 
 
-## This will run any config file. To run: "python3 main.py [configFile]"
+## This will run any config file. To run: "python3 main.py [CONFIG_FILE_NAME]"
