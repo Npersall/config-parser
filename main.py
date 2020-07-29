@@ -51,3 +51,4 @@ if __name__ == "__main__":
 
 
 ## This will run any config file. To run: "python3 main.py [CONFIG_FILE_NAME]"
+## "python3 main.py [ARGV]"
